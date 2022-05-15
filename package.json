@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EricaNoir/portfolio/issues"
   },
-  "homepage": "https://github.com/EricaNoir/portfolio#readme"
+  "homepage": "https://github.com/EricaNoir/portfolio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
