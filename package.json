@@ -2,14 +2,15 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "DECO2017",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
     "start": "node server.js"
   },
-  
+  "prestart": "parcel build ./public/index.html",
+  "dev": "parcel serve ./public/index.html"
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EricaNoir/portfolio.git"
