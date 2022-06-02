@@ -1,41 +1,99 @@
-nav {
-    width: 100%;
-    background-color: #123;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .nav-links {
-        list-style: none;
-        display: flex;
-        .nav-item a {
-            display: inline-block;
-            text-decoration: none;
-            color: white;
-            padding: 1em 2em;
-            &:hover {
-                color: #abc;
-            }
-            &.active {
-                font-weight: bold;
-            }
-        }
+#homeBar {
+    h1 {
+        position: absolute;
+        left: 14px;
+        top: 3px;
+        overflow: visible;
+        width: 109px;
+        white-space: nowrap;
+        text-align: left;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        color: rgba(107,107,107,1);
+        letter-spacing: 0.3px;
     }
-}
-
-nav.vertical {
-    width: 120px;
-    height: 100vh;
-    flex-direction: row;
     position: absolute;
-    left: 0;
-    top: 0;
-    .nav-links {
-        flex-direction: column;
-        .nav-item a {
-            display: block;
-            padding: 4em 0;
-            
+	width: 454px;
+	height: 1080px;
+    background-color: rgba(255,255,255,1);
+
+    #logoContainer {
+        width: 454px;
+        height: 68px;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(243,243,243,1);
+
+        #logo {
+            position: absolute;
+            left: 20px;
+            top: 14px;
+            width: 155px;
+            white-space: nowrap;
+            font-family: SF Pro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            color: rgba(0,0,0,1);
+            letter-spacing: 0.3px;
         }
     }
 
+    .nav {
+        position: relative;
+	    width: 402px;
+        overflow: visible;
+        height: 100px;
+        left: 26px;
+    
+
+    }
+    #courses {
+        top: 30px;
+
+        #cNav {
+	        width: 401px;
+            height: 37px;
+
+            #cNavLine {
+                position: absolute;
+                background-color: rgba(93,149,191,1);  
+                width: 5px;
+                height: 37px;
+            }
+
+            #courseAdd {
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                left: 377px;
+                top: 10px;
+                overflow: visible;
+            }
+        }
+    }
+
+    #assessments {
+        #aNav {
+            width: 401px;
+            height: 37px;
+        }
+
+        #aNavLine {
+            position: absolute;
+            background-color: rgba(34,151,34,1);  
+            width: 5px;
+            height: 37px;
+        }
+
+        #assAdd {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 377px;
+            top: 10px;
+            overflow: visible;
+        }
+    }
 }
