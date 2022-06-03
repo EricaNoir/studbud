@@ -53,7 +53,6 @@ small, .text_small {
   height: 1080px;
   position: absolute;
   top: 0;
-  left: 122px;
   overflow: visible;
 }
 
@@ -105,14 +104,19 @@ input, button, textarea, select {
   }
 }
 
-#homeBar {
+.app-container {
+  max-width: 1920px;
+  max-height: 1080px;
+}
+
+.app-container #homeBar {
   width: 454px;
   height: 1080px;
   background-color: #fff;
   position: absolute;
 }
 
-#homeBar h1 {
+.app-container #homeBar h1 {
   width: 109px;
   white-space: nowrap;
   text-align: left;
@@ -127,7 +131,7 @@ input, button, textarea, select {
   overflow: visible;
 }
 
-#homeBar #logoContainer {
+.app-container #homeBar #logoContainer {
   width: 454px;
   height: 68px;
   background-color: #f3f3f3;
@@ -135,7 +139,7 @@ input, button, textarea, select {
   left: 0;
 }
 
-#homeBar #logoContainer #logo {
+.app-container #homeBar #logoContainer #logo {
   width: 155px;
   white-space: nowrap;
   color: #000;
@@ -149,7 +153,7 @@ input, button, textarea, select {
   left: 20px;
 }
 
-#homeBar .nav {
+.app-container #homeBar .nav {
   width: 402px;
   height: 100px;
   position: relative;
@@ -157,23 +161,23 @@ input, button, textarea, select {
   overflow: visible;
 }
 
-#homeBar #courses {
+.app-container #homeBar #courses {
   top: 30px;
 }
 
-#homeBar #courses #cNav {
+.app-container #homeBar #courses #cNav {
   width: 401px;
   height: 37px;
 }
 
-#homeBar #courses #cNav #cNavLine {
+.app-container #homeBar #courses #cNav #cNavLine {
   width: 5px;
   height: 37px;
   background-color: #5d95bf;
   position: absolute;
 }
 
-#homeBar #courses #cNav #courseAdd {
+.app-container #homeBar #courses #cNav #courseAdd {
   width: 24px;
   height: 24px;
   position: absolute;
@@ -182,25 +186,80 @@ input, button, textarea, select {
   overflow: visible;
 }
 
-#homeBar #assessments #aNav {
+.app-container #homeBar #assessments #aNav {
   width: 401px;
   height: 37px;
 }
 
-#homeBar #assessments #aNavLine {
+.app-container #homeBar #assessments #aNavLine {
   width: 5px;
   height: 37px;
   background-color: #229722;
   position: absolute;
 }
 
-#homeBar #assessments #assAdd {
+.app-container #homeBar #assessments #assAdd {
   width: 24px;
   height: 24px;
   position: absolute;
   top: 10px;
   left: 377px;
   overflow: visible;
+}
+
+.app-container #kanban {
+  background-color: #473737;
+  position: absolute;
+  inset: 50px 70px 50px 516px;
+}
+
+.app-container #kanban h1 {
+  width: 109px;
+  white-space: nowrap;
+  text-align: left;
+  letter-spacing: .3px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: bold;
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  overflow: visible;
+}
+
+.app-container #kanban #assTitle {
+  height: 110px;
+  width: 100%;
+  background-color: #cf4545;
+  position: absolute;
+}
+
+.app-container #kanban #kanbanContainer {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  top: 110px;
+  overflow: hidden;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock {
+  width: 400px;
+  height: 810px;
+  background-color: #fff;
+  margin: 10px;
+}
+
+@media screen and (min-width: 1920px) {
+  .app-container #kanban {
+    width: 1335px;
+  }
+}
+
+@media screen and (min-height: 1080px) {
+  .app-container #kanban {
+    height: 980px;
+  }
 }
 
 #task-grid {

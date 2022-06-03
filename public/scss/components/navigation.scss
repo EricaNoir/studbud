@@ -1,69 +1,96 @@
-#homeBar {
-    h1 {
+.app-container {
+    max-width: 1920px;
+    max-height: 1080px;
+    #homeBar {
         position: absolute;
-        left: 14px;
-        top: 3px;
-        overflow: visible;
-        width: 109px;
-        white-space: nowrap;
-        text-align: left;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 28px;
-        color: rgba(107,107,107,1);
-        letter-spacing: 0.3px;
-    }
-    position: absolute;
-	width: 454px;
-	height: 1080px;
-    background-color: rgba(255,255,255,1);
-
-    #logoContainer {
         width: 454px;
-        height: 68px;
-        left: 0px;
-        top: 0px;
-        background-color: rgba(243,243,243,1);
-
-        #logo {
+        height: 1080px;
+        background-color: rgba(255,255,255,1);
+    
+        h1 {
             position: absolute;
-            left: 20px;
-            top: 14px;
-            width: 155px;
+            left: 14px;
+            top: 3px;
+            overflow: visible;
+            width: 109px;
             white-space: nowrap;
-            font-family: SF Pro;
+            text-align: left;
             font-style: normal;
             font-weight: bold;
-            font-size: 30px;
-            color: rgba(0,0,0,1);
+            font-size: 28px;
+            color: rgba(107,107,107,1);
             letter-spacing: 0.3px;
         }
-    }
-
-    .nav {
-        position: relative;
-	    width: 402px;
-        overflow: visible;
-        height: 100px;
-        left: 26px;
     
-
-    }
-    #courses {
-        top: 30px;
-
-        #cNav {
-	        width: 401px;
-            height: 37px;
-
-            #cNavLine {
+        #logoContainer {
+            width: 454px;
+            height: 68px;
+            left: 0px;
+            top: 0px;
+            background-color: rgba(243,243,243,1);
+    
+            #logo {
                 position: absolute;
-                background-color: rgba(93,149,191,1);  
+                left: 20px;
+                top: 14px;
+                width: 155px;
+                white-space: nowrap;
+                font-family: SF Pro;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 30px;
+                color: rgba(0,0,0,1);
+                letter-spacing: 0.3px;
+            }
+        }
+    
+        .nav {
+            position: relative;
+            width: 402px;
+            overflow: visible;
+            height: 100px;
+            left: 26px;
+        }
+    
+        #courses {
+            top: 30px;
+    
+            #cNav {
+                width: 401px;
+                height: 37px;
+    
+                #cNavLine {
+                    position: absolute;
+                    background-color: rgba(93,149,191,1);  
+                    width: 5px;
+                    height: 37px;
+                }
+    
+                #courseAdd {
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    left: 377px;
+                    top: 10px;
+                    overflow: visible;
+                }
+            }
+        }
+    
+        #assessments {
+            #aNav {
+                width: 401px;
+                height: 37px;
+            }
+    
+            #aNavLine {
+                position: absolute;
+                background-color: rgba(34,151,34,1);  
                 width: 5px;
                 height: 37px;
             }
-
-            #courseAdd {
+    
+            #assAdd {
                 position: absolute;
                 width: 24px;
                 height: 24px;
@@ -73,27 +100,66 @@
             }
         }
     }
+    
 
-    #assessments {
-        #aNav {
-            width: 401px;
-            height: 37px;
-        }
 
-        #aNavLine {
+    #kanban {
+        position: absolute;
+        left: 516px;
+        right: 70px;
+        top: 50px;
+        bottom: 50px;
+        background-color: rgb(71, 55, 55);    
+        h1 {
             position: absolute;
-            background-color: rgba(34,151,34,1);  
-            width: 5px;
-            height: 37px;
-        }
-
-        #assAdd {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 377px;
-            top: 10px;
+            left: 14px;
+            top: 3px;
             overflow: visible;
+            width: 109px;
+            white-space: nowrap;
+            text-align: left;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            letter-spacing: 0.3px;
+        }
+    
+        #assTitle {
+            position: absolute;
+            height: 110px;
+            width: 100%;
+            background-color: rgb(207, 69, 69);
+        }
+
+        #kanbanContainer {
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            top: 110px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .kanbanBlock {
+                width: 400px;
+                height: 810px;
+                background-color: white;
+                margin: 10px;
+            }
+        
+        }
+        
+    }
+    @media screen and (min-width: 1920px) {
+        #kanban {
+            width: 1335px;
         }
     }
+    @media screen and (min-height: 1080px) {
+        #kanban {
+            height: 980px;
+        }
+    }
+    
+    
 }
+

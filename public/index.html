@@ -10,7 +10,7 @@
 </head>
 <body class="app-container">
   <img id="bkg" src= "./img/bkg.png">
-  <!--left bar-->
+  <!--navbar-->
   <div id="homeBar">
     <!--logo part-->
 		<div id="logoContainer">
@@ -35,9 +35,47 @@
         <img class="add" id="assAdd" src="img/assAdd.svg">
       </div> 
     </div>
-
-
 	</div>
+  <!--kanban-->
+  <div id="kanban">
+    <!--title part-->
+    <div id="assTitle">
+
+    </div>
+
+    <!--kanban part-->
+    <div id="kanbanContainer">
+      <div class="kanbanBlock" id="toDo">
+        <div class="nav"  id="toDoNav">
+          <div id="tNav">
+            <svg id="tNavLine" viewBox="0 0 5 37"></svg>
+            <h1>To Do</h1>
+            <h1 id="toDoNum">0</h1>
+          </div> 
+        </div>
+      </div>
+
+      <div class="kanbanBlock" id="inProgress">
+        <div class="nav"  id="inProgressNav">
+          <div id="iNav">
+            <svg id="iNavLine" viewBox="0 0 5 37"></svg>
+            <h1>In progress</h1>
+            <h1 id="inProgressNum">0</h1>
+          </div> 
+        </div>
+      </div>
+
+      <div class="kanbanBlock" id="done">
+        <div class="nav"  id="doneNav">
+          <div id="dNav">
+            <svg id="dNavLine" viewBox="0 0 5 37"></svg>
+            <h1>Done</h1>
+            <h1 id="doneNum">0</h1>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
