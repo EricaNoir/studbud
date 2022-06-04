@@ -12,35 +12,37 @@ body {
 }
 
 p {
-  margin-bottom: 1rem;
+  font-size: 13px;
+  font-weight: semibold;
+  color: #6b6b6b;
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 3rem 0 1.38rem;
   font-family: SF Pro;
-  font-weight: 400;
-  line-height: 1.3;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 3.052rem;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 2.441rem;
+  font-size: 19px;
+  font-weight: semibold;
 }
 
 h3 {
-  font-size: 1.953rem;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 h4 {
-  font-size: 1.563rem;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 15px;
+  font-weight: semibold;
 }
 
 small, .text_small {
@@ -48,12 +50,65 @@ small, .text_small {
 }
 
 #bkg {
-  opacity: .47;
-  width: 1920px;
-  height: 1080px;
+  opacity: .65;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
-  overflow: visible;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+div.ass {
+  width: 400px;
+  height: 110px;
+  background-color: #f3f3f3;
+  border-radius: 15px;
+}
+
+div.ass .colorBar {
+  width: 30px;
+  height: 110px;
+  background-color: #ce7b7b;
+  border-radius: 15px 0 0 15px;
+  position: absolute;
+}
+
+div.ass .assInfo {
+  width: 345px;
+  height: 88px;
+  position: absolute;
+  top: 11px;
+  left: 64px;
+}
+
+div.ass .assInfo h2, div.ass .assInfo h3, div.ass .assInfo h4, div.ass .assInfo h5 {
+  color: #ce7b7b;
+}
+
+div.ass .assInfo .mark {
+  background-color: #01010100;
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+
+div.ass .assInfo .ddl {
+  position: absolute;
+  bottom: 0;
+}
+
+div.ass .assInfo .completion {
+  display: flex;
+  position: absolute;
+  bottom: -9px;
+  right: 0;
+}
+
+div.ass .assInfo p {
+  position: relative;
+  top: 4px;
 }
 
 *, :before, :after {
@@ -104,27 +159,21 @@ input, button, textarea, select {
   }
 }
 
-.app-container {
-  max-width: 1920px;
-  max-height: 1080px;
-}
-
 .app-container #homeBar {
   width: 454px;
-  height: 1080px;
+  height: 100%;
   background-color: #fff;
   position: absolute;
 }
 
 .app-container #homeBar h1 {
-  width: 109px;
   white-space: nowrap;
   text-align: left;
+  font-style: normal;
+  font-weight: semibold;
   color: #6b6b6b;
   letter-spacing: .3px;
   font-size: 28px;
-  font-style: normal;
-  font-weight: bold;
   position: absolute;
   top: 3px;
   left: 14px;
@@ -208,13 +257,11 @@ input, button, textarea, select {
 }
 
 .app-container #kanban {
-  background-color: #473737;
   position: absolute;
-  inset: 50px 70px 50px 516px;
+  inset: 50px 60px 50px 516px;
 }
 
 .app-container #kanban h1 {
-  width: 109px;
   white-space: nowrap;
   text-align: left;
   letter-spacing: .3px;
@@ -230,24 +277,83 @@ input, button, textarea, select {
 .app-container #kanban #assTitle {
   height: 110px;
   width: 100%;
-  background-color: #cf4545;
+  padding-left: 20px;
+  padding-right: 20px;
   position: absolute;
 }
 
+.app-container #kanban #assTitle #assInKanban, .app-container #kanban #assTitle #assInKanban .assInfo {
+  width: 100%;
+}
+
+.app-container #kanban #assTitle #assInKanban .assInfo .mark, .app-container #kanban #assTitle #assInKanban .assInfo .completion {
+  right: 100px;
+}
+
 .app-container #kanban #kanbanContainer {
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  scroll-snap-type: x mandatory;
   justify-content: space-between;
   display: flex;
   position: relative;
-  top: 110px;
-  overflow: hidden;
+  top: 150px;
+  overflow-x: scroll;
 }
 
 .app-container #kanban #kanbanContainer .kanbanBlock {
-  width: 400px;
-  height: 810px;
+  width: 390px;
+  height: 800px;
   background-color: #fff;
-  margin: 10px;
+  border-radius: 10px;
+  flex: none;
+  margin: 20px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav {
+  width: 360px;
+  height: 40px;
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #tNavLine {
+  width: 5px;
+  height: 37px;
+  background-color: #5d95bf;
+  position: absolute;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #iNavLine {
+  width: 5px;
+  height: 37px;
+  background-color: #6b6b6b;
+  position: absolute;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #dNavLine {
+  width: 5px;
+  height: 37px;
+  background-color: #229722;
+  position: absolute;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav h1.num {
+  text-align: right;
+  position: absolute;
+  right: 20px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #t, .app-container #kanban #kanbanContainer .kanbanBlock .nav #toDoNum {
+  color: #5d95bf;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #i, .app-container #kanban #kanbanContainer .kanbanBlock .nav #inProgressNum {
+  color: #6b6b6b;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #d, .app-container #kanban #kanbanContainer .kanbanBlock .nav #doneNum {
+  color: #229722;
 }
 
 @media screen and (min-width: 1920px) {
@@ -259,6 +365,12 @@ input, button, textarea, select {
 @media screen and (min-height: 1080px) {
   .app-container #kanban {
     height: 980px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .app-container #kanban {
+    visibility: hidden;
   }
 }
 

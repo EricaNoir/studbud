@@ -40,38 +40,51 @@
   <div id="kanban">
     <!--title part-->
     <div id="assTitle">
-
+      <div class="ass" id="assInKanban">
+        <div class="colorBar">
+        </div>
+        <div class="assInfo">
+          <div class="mark">
+            <h2 class="finalMark">-</h2>
+            <h2 class="slash">&nbsp;/&nbsp;</h2>
+            <h2 class="totalMark">40</h2>
+          </div>
+          <h3 class="assName">A2_Web App Pitch</h3>
+          <h4 class="ddl">Apr 15</h4>
+          <div class="completion">
+            <h5 class="completed">1</h5>
+            <h5 class="slash">&nbsp;/&nbsp;</h5>
+            <h5 class="totalPart">5 DONE</h5>
+          </div>
+          <p class="percentage">40%</p>
+          <p class="completionTime">7 days</p>
+        </div>
+      </div>
     </div>
 
     <!--kanban part-->
     <div id="kanbanContainer">
       <div class="kanbanBlock" id="toDo">
         <div class="nav" id="toDoNav">
-          <div id="tNav">
             <svg id="tNavLine" viewbox="0 0 5 37"></svg>
-            <h1>To Do</h1>
-            <h1 id="toDoNum">0</h1>
-          </div> 
+            <h1 id="t">To Do</h1>
+            <h1 class="num" id="toDoNum">0</h1>
         </div>
       </div>
 
       <div class="kanbanBlock" id="inProgress">
         <div class="nav" id="inProgressNav">
-          <div id="iNav">
             <svg id="iNavLine" viewbox="0 0 5 37"></svg>
-            <h1>In progress</h1>
-            <h1 id="inProgressNum">0</h1>
-          </div> 
+            <h1 id="i">In progress</h1>
+            <h1 class="num" id="inProgressNum">0</h1>
         </div>
       </div>
 
       <div class="kanbanBlock" id="done">
         <div class="nav" id="doneNav">
-          <div id="dNav">
             <svg id="dNavLine" viewbox="0 0 5 37"></svg>
-            <h1>Done</h1>
-            <h1 id="doneNum">0</h1>
-          </div> 
+            <h1 id="d">Done</h1>
+            <h1 class="num" id="doneNum">0</h1>
         </div>
       </div>
     </div>

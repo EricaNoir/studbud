@@ -1,8 +1,54 @@
 #bkg {
-	opacity: 0.47;
+	opacity: 0.65;
 	position: absolute;
-	width: 1920px;
-	height: 1080px;
-	top: 0px;
-	overflow: visible;
+	width: 100%;
+	height: 100%;
+}
+*::-webkit-scrollbar {
+	display: none;
+  }
+
+div.ass {
+	width: 400px;
+	height: 110px;
+	border-radius: 15px;
+	background-color: #F3F3F3;
+	.colorBar {
+		position: absolute;
+		width: 30px;
+		height: 110px;
+		background-color: #CE7B7B;
+		border-radius: 15px 0px 0px 15px;
+	}
+	.assInfo {
+		h2, h3, h4, h5 {
+			color: #CE7B7B;
+		}
+		position: absolute;
+		left: 64px;
+		top: 11px;
+		width: 345px;
+		height: 88px;
+		.mark {
+			display: flex;
+			position: absolute;
+			right: 0px;
+			background-color: rgba(1, 1, 1, 0);
+		}
+		.ddl {
+			position: absolute;
+			bottom: 0px;
+		}
+		.completion {
+			display: flex;
+			position: absolute;
+			bottom: -9px;
+			right: 0px;
+		}
+		p {
+			position: relative;
+			top: 4px;
+		}
+	}
+
 }

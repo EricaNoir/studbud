@@ -1,12 +1,7 @@
-.app-container {
-  max-width: 1920px;
-  max-height: 1080px;
-}
-
 .app-container #homeBar {
   position: absolute;
   width: 454px;
-  height: 1080px;
+  height: 100%;
   background-color: white;
 }
 
@@ -15,11 +10,10 @@
   left: 14px;
   top: 3px;
   overflow: visible;
-  width: 109px;
   white-space: nowrap;
   text-align: left;
   font-style: normal;
-  font-weight: bold;
+  font-weight: semibold;
   font-size: 28px;
   color: #6b6b6b;
   letter-spacing: 0.3px;
@@ -104,10 +98,9 @@
 .app-container #kanban {
   position: absolute;
   left: 516px;
-  right: 70px;
+  right: 60px;
   top: 50px;
   bottom: 50px;
-  background-color: #473737;
 }
 
 .app-container #kanban h1 {
@@ -115,7 +108,6 @@
   left: 14px;
   top: 3px;
   overflow: visible;
-  width: 109px;
   white-space: nowrap;
   text-align: left;
   font-style: normal;
@@ -128,23 +120,86 @@
   position: absolute;
   height: 110px;
   width: 100%;
-  background-color: #cf4545;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-container #kanban #assTitle #assInKanban {
+  width: 100%;
+}
+
+.app-container #kanban #assTitle #assInKanban .assInfo {
+  width: 100%;
+}
+
+.app-container #kanban #assTitle #assInKanban .assInfo .mark, .app-container #kanban #assTitle #assInKanban .assInfo .completion {
+  right: 100px;
 }
 
 .app-container #kanban #kanbanContainer {
-  overflow: hidden;
   position: relative;
+  top: 150px;
   display: flex;
-  top: 110px;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: no-wrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
 .app-container #kanban #kanbanContainer .kanbanBlock {
-  width: 400px;
-  height: 810px;
+  flex: 0 0 auto;
+  width: 390px;
+  height: 800px;
+  border-radius: 10px;
   background-color: white;
-  margin: 10px;
+  margin: 20px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav {
+  position: relative;
+  top: 15px;
+  left: 20px;
+  width: 360px;
+  height: 40px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #tNavLine {
+  position: absolute;
+  background-color: #5d95bf;
+  width: 5px;
+  height: 37px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #iNavLine {
+  position: absolute;
+  background-color: #6B6B6B;
+  width: 5px;
+  height: 37px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #dNavLine {
+  position: absolute;
+  background-color: #229722;
+  width: 5px;
+  height: 37px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav h1.num {
+  position: absolute;
+  text-align: right;
+  right: 20px;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #t, .app-container #kanban #kanbanContainer .kanbanBlock .nav #toDoNum {
+  color: #5d95bf;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #i, .app-container #kanban #kanbanContainer .kanbanBlock .nav #inProgressNum {
+  color: #6B6B6B;
+}
+
+.app-container #kanban #kanbanContainer .kanbanBlock .nav #d, .app-container #kanban #kanbanContainer .kanbanBlock .nav #doneNum {
+  color: #229722;
 }
 
 @media screen and (min-width: 1920px) {
@@ -156,5 +211,11 @@
 @media screen and (min-height: 1080px) {
   .app-container #kanban {
     height: 980px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .app-container #kanban {
+    visibility: hidden;
   }
 }
