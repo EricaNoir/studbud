@@ -300,6 +300,50 @@ input, button, textarea, select {
   overflow-x: scroll;
 }
 
+.app-container #kanban #kanbanContainer .formContainer {
+  height: 60px;
+  position: absolute;
+  top: 95px;
+  left: 40px;
+  overflow-y: scroll;
+}
+
+.app-container #kanban #kanbanContainer .formContainer input {
+  width: 350px;
+  height: 60px;
+  font: SF Pro;
+  color: #474747;
+  border: 4px dashed #b2b2b2;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 30px;
+  font-size: 22px;
+  transition: all .3s;
+}
+
+.app-container #kanban #kanbanContainer .formContainer input:focus {
+  border-color: #5d95bf;
+}
+
+.app-container #kanban #kanbanContainer .formContainer input::placeholder {
+  color: #b2b2b2;
+}
+
+.app-container #kanban #kanbanContainer .formContainer button {
+  opacity: .5;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition-duration: .2s;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.app-container #kanban #kanbanContainer .formContainer button:hover {
+  opacity: 1;
+}
+
 .app-container #kanban #kanbanContainer .kanbanBlock {
   width: 390px;
   height: 800px;

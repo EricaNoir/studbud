@@ -147,6 +147,56 @@
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
 
+            .todoTasks {
+                
+            }
+
+            .formContainer {
+                top: 95px;
+                position: absolute;
+                left: 40px;
+                height: 60px;
+                overflow-y: scroll;
+                input {
+                    width: 350px;
+                    height: 60px;
+                    outline: none;
+                    border-radius: 5px;
+                    border: 4px #B2B2B2;
+                    border-style: dashed;
+                    -webkit-transition: 0.3s;
+                    transition: 0.3s;
+                    padding-left: 30px;
+                    font: SF Pro;
+                    font-size: 22px;
+                    color: #474747;
+                }
+                input:focus {
+                    border-color: rgba(93,149,191,1);
+                    
+                }
+                input::placeholder {
+                    color: #B2B2B2;
+                  }
+                
+
+                button {
+                    opacity: 0.5;
+                    border: none;
+                    position: absolute;
+                    background: transparent;
+                    cursor: pointer;
+                    right: 10px;
+                    top: 15px;
+                    -webkit-transition-duration: 0.2s;
+                    transition-duration: 0.2s;
+                }
+                button:hover {
+                    opacity: 1;
+                }
+            }
+            
+
             .kanbanBlock {
                 flex: 0 0 auto;
                 width: 390px;

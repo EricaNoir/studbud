@@ -146,6 +146,48 @@
   scroll-snap-type: x mandatory;
 }
 
+.app-container #kanban #kanbanContainer .formContainer {
+  top: 100px;
+  position: absolute;
+  left: 40px;
+  height: 60px;
+  overflow-y: scroll;
+}
+
+.app-container #kanban #kanbanContainer .formContainer input {
+  width: 350px;
+  height: 60px;
+  outline: none;
+  border-radius: 5px;
+  border: 4px #B2B2B2;
+  border-style: dashed;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding-left: 30px;
+  font: SF Pro;
+  font-size: 22px;
+}
+
+.app-container #kanban #kanbanContainer .formContainer input:focus {
+  border-color: #5d95bf;
+}
+
+.app-container #kanban #kanbanContainer .formContainer button {
+  opacity: 0.5;
+  border: none;
+  position: absolute;
+  background: transparent;
+  cursor: pointer;
+  right: 10px;
+  top: 15px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.app-container #kanban #kanbanContainer .formContainer button:hover {
+  opacity: 1;
+}
+
 .app-container #kanban #kanbanContainer .kanbanBlock {
   flex: 0 0 auto;
   width: 390px;
