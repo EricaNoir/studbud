@@ -10,6 +10,16 @@
 </head>
 <body class="app-container">
   <img id="bkg" src="/bkg.29fdeed7.png">
+  <div class="darkBkg" id="addCourseForm">
+    <form id="courseForm">
+      <h1 class="formTitle">Add a course</h1>
+      <input type="text" class="courseNamaInput" placeholder="This is a course called...">
+      <input type="text" class="courseCodeInput" placeholder="Code">
+      <input type="text" class="courseDesInput" placeholder="This is a course about...">
+      <button class="deleteButton" id="courseDeleteButton"><div class="innerDelete">Delete</div></button>
+      <button type="submit" class="addButton" id="courseAddButton"><div class="innerAdd">Add</div></button>
+    </form>
+  </div>
   <!--navbar-->
   <div id="homeBar">
     <!--logo part-->
@@ -23,8 +33,11 @@
       <div id="cNav">
         <svg id="cNavLine" viewbox="0 0 5 37"></svg>
         <h1>Courses</h1>
-        <img class="add" id="courseAdd" src="/courseAdd.523d4abc.svg">
+        <button class="add" id="cAdd" onclick="createCourse()"><img class="add" id="courseAdd" src="/courseAdd.523d4abc.svg"></button>
       </div> 
+      <div id="courseContainer">
+
+      </div>
     </div>
 
     <!--assessment nav-->
@@ -32,8 +45,13 @@
       <div id="aNav">
         <svg id="aNavLine" viewbox="0 0 5 37"></svg>
         <h1>Assessments</h1>
-        <img class="add" id="assAdd" src="/assAdd.b15b600b.svg">
+        <button class="add" id="aAdd">
+          <img class="add" id="assAdd" src="/assAdd.b15b600b.svg">
+        </button>
       </div> 
+      <div id="assContainer">
+
+      </div>
     </div>
 	</div>
   <!--kanban-->
@@ -101,7 +119,9 @@
         </div>
         <!--tasks-->
         <div class="tasks" id="iTasksContainer">
+          <ul class="inprogressTasks">
 
+          </ul>
         </div>
 
       </div>
@@ -114,7 +134,9 @@
         </div>
         <!--tasks-->
         <div class="tasks" id="dTasksContainer">
+          <ul class="doneTasks">
 
+          </ul>
         </div>
 
       </div>

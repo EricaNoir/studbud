@@ -60,6 +60,19 @@ small, .text_small {
   display: none;
 }
 
+button {
+  opacity: .5;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition-duration: .2s;
+  position: absolute;
+}
+
+button:hover {
+  opacity: 1;
+}
+
 div.ass {
   width: 400px;
   height: 110px;
@@ -157,6 +170,27 @@ input, button, textarea, select {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+.app-container div#addCourseForm {
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-color: #0006;
+  position: fixed;
+  top: 0;
+}
+
+.app-container div#addCourseForm #courseForm {
+  width: 440px;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: auto;
+  padding: 40px;
+  position: absolute;
+  inset: 0;
 }
 
 .app-container #homeBar {
@@ -306,10 +340,11 @@ input, button, textarea, select {
   position: relative;
   top: 30px;
   left: 5px;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
-.app-container #kanban #kanbanContainer ul.todoTasks .item {
+.app-container #kanban #kanbanContainer ul .item {
   width: 340px;
   height: 70px;
   font: SF Pro;
@@ -324,11 +359,11 @@ input, button, textarea, select {
   transition: all .3s;
 }
 
-.app-container #kanban #kanbanContainer ul.todoTasks .item:first-child {
+.app-container #kanban #kanbanContainer ul .item:first-child {
   margin-top: 0;
 }
 
-.app-container #kanban #kanbanContainer ul.todoTasks .delete-button {
+.app-container #kanban #kanbanContainer ul .delete-button {
   float: right;
   opacity: .5;
   color: #6b6b6b;
@@ -345,7 +380,7 @@ input, button, textarea, select {
   right: 9px;
 }
 
-.app-container #kanban #kanbanContainer ul.todoTasks .delete-button:hover {
+.app-container #kanban #kanbanContainer ul .delete-button:hover {
   opacity: 1;
 }
 

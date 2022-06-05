@@ -1,3 +1,9 @@
+function createCourse() {
+  const courseForm = document.getElementById("addCourseForm");
+  courseForm.style.visibility = "visible";
+}
+
+
 // select everything
 // select the todo-form
 const todoForm = document.querySelector('.todo-form');
@@ -134,3 +140,4 @@ todoTasks.addEventListener('click', function(event) {
     deleteTodo(event.target.parentElement.getAttribute('data-key'));
   }
 });
+
