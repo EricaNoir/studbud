@@ -183,14 +183,110 @@ input, button, textarea, select {
 }
 
 .app-container div#addCourseForm #courseForm {
-  width: 440px;
+  width: 380px;
   height: 550px;
   background-color: #fff;
   border-radius: 15px;
   margin: auto;
-  padding: 40px;
+  padding: 30px 40px 40px;
+  font-size: 20px;
   position: absolute;
   inset: 0;
+}
+
+.app-container div#addCourseForm #courseForm input::placeholder {
+  color: #b2b2b2;
+}
+
+.app-container div#addCourseForm #courseForm h1 {
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.app-container div#addCourseForm #courseForm h3 {
+  color: #707070;
+  font-size: 20px;
+  font-weight: semibold;
+}
+
+.app-container div#addCourseForm #courseForm .inputContainer {
+  width: 320px;
+  height: 80px;
+  margin-top: 25px;
+}
+
+.app-container div#addCourseForm #courseForm .inputContainer h3 {
+  padding-bottom: 5px;
+}
+
+.app-container div#addCourseForm #courseForm .inputContainer input {
+  width: 300px;
+  height: 50px;
+  font: SF Pro;
+  color: #474747;
+  border: 2px solid #b2b2b2;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 10px;
+  font-size: 22px;
+  transition: all .3s;
+}
+
+.app-container div#addCourseForm #courseForm .inputContainer input:focus {
+  border: 2px solid #5a7454;
+}
+
+.app-container div#addCourseForm #courseForm button {
+  width: 106px;
+  height: 51px;
+  opacity: .5;
+  cursor: pointer;
+  background: none;
+  border: 2px solid;
+  border-radius: 9px;
+  padding: 0;
+  transition-duration: .2s;
+  position: relative;
+  top: 60px;
+}
+
+.app-container div#addCourseForm #courseForm button div {
+  width: 100px;
+  height: 45px;
+  background-color: #000;
+  border-radius: 7px;
+  position: relative;
+  left: 1px;
+}
+
+.app-container div#addCourseForm #courseForm button div h2 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  top: 6px;
+}
+
+.app-container div#addCourseForm #courseForm button:hover {
+  opacity: 1;
+}
+
+.app-container div#addCourseForm #courseForm #courseDeleteButton {
+  color: #ce7b7b;
+}
+
+.app-container div#addCourseForm #courseForm #courseDeleteButton div {
+  background-color: #ce7b7b;
+}
+
+.app-container div#addCourseForm #courseForm #courseAddButton {
+  color: #229722;
+  left: 83px;
+}
+
+.app-container div#addCourseForm #courseForm #courseAddButton div {
+  background-color: #229722;
 }
 
 .app-container #homeBar {

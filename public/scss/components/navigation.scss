@@ -11,7 +11,7 @@
         #courseForm {
             background-color: #fff;
             border-radius: 15px;
-            width: 440px;
+            width: 380px;
             height: 550px;
             margin: auto;
             position: absolute;
@@ -19,7 +19,104 @@
             left: 0;
             right: 0;
             bottom: 0;
-            padding: 40px;   
+            padding: 40px;
+            padding-top: 30px;
+            font-size: 20px;
+
+
+            input::placeholder {
+                color: #B2B2B2;
+              }
+
+            h1 {
+                font-size: 35px;
+                font-weight: bold;
+                color: black;
+            }
+
+            h3 {
+                font-size: 20px;
+                color: #707070;
+                font-weight: semibold;
+            }
+            .inputContainer {
+                width: 320px;
+                height: 80px;
+                margin-top: 25px;
+
+                h3 {
+                    padding-bottom: 5px;
+                }
+                input {
+                    width: 300px;
+                    height: 50px;
+                    outline: none;
+                    border-radius: 10px;
+                    border: 2px solid #B2B2B2;
+                    -webkit-transition: 0.3s;
+                    transition: 0.3s;
+                    padding-left: 10px;
+                    font: SF Pro;
+                    font-size: 22px;
+                    color: #474747;
+                }
+                input:focus {
+                    border: 2px solid #5a7454;
+                }
+            }
+            button {
+                top: 60px;
+                padding: 0px;
+                position: relative;
+                width: 106px;
+                height: 51px;
+                border: 2px solid;
+                border-radius: 9px;
+                opacity: 0.5;
+                background: transparent;
+                cursor: pointer;
+                -webkit-transition-duration: 0.2s;
+                transition-duration: 0.2s;
+
+                div {
+                    position: relative;
+                    left: 1px;
+                    width: 100px;
+                    height: 45px;
+                    border-radius: 7px;
+                    background-color: black;
+
+                    h2 {
+                        position: relative;
+                        top: 6px;
+                        font-size: 25px;
+                        font-weight: bold;
+                        color: #ffffff;
+                    }
+                }
+            }
+            button:hover {
+                opacity: 1;
+            }
+
+            #courseDeleteButton {
+                color: #CE7B7B;
+                div{
+                    
+                    background-color: #CE7B7B;
+                }
+            }
+
+            #courseAddButton {
+                left: 83px;
+                color: #229722;
+                div{
+                    
+                    background-color: #229722;
+                }
+            }
+
+
         }
     }
     #homeBar {
@@ -97,12 +194,6 @@
                     overflow: visible;
                 }
             }
-        }
-
-
-
-        #cAdd:onclick {
-
         }
 
 
@@ -254,7 +345,6 @@
                 }
                 input:focus {
                     border-color: rgba(93,149,191,1);
-                    
                 }
                 input::placeholder {
                     color: #B2B2B2;

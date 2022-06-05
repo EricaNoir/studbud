@@ -3,6 +3,95 @@ function createCourse() {
   courseForm.style.visibility = "visible";
 }
 
+const addCourseForm = document.getElementById("addCourseForm");
+
+const courseNameInput = document.querySelector(".courseNamaInput")
+const courseCodeInput = document.querySelector(".courseCodeInput")
+const courseDesInput = document.querySelector(".courseDesInput")
+
+const courseContainer = document.getElementById("courseContainer")
+
+//array storing the courses
+let courses = [];
+
+class Course {
+  constructor(name, code, description) {
+    this.name = name;
+    this.code = code;
+    this.description = description;
+
+    this.assessments = [];
+    this.links = [];
+  }
+}
+
+class Assessment {
+  constructor(name, description, timeToComplete, course, priority, dueDate, completion) {
+    this.name = name;
+    this.description = description;
+    this.timeToComplete = timeToComplete;
+    this.course = course;
+    this.priority = priority;
+    this.dueDate = dueDate;
+    this.completion = completion;
+
+    this.taskTodo = [];
+    this.taskInprogress = [];
+    this.taskDone = [];
+  }
+}
+
+class task {
+  constructor(name) {
+    this.nama = name;
+    this.completion = 0;
+  }
+}
+
+addCourseForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  addCourse(courseNameInput, courseCodeInput, courseDesInput);
+})
+
+function addCourse(courseNameInput, courseCodeInput, courseDesInput) {
+  if (courseNameInput !== "" && courseCodeInput !== "" && courseDesInput !== "") {
+    //create object
+    const course = new Course(courseNameInput, courseCodeInput, courseDesInput);
+    //push
+    courses.push(course);
+    //store
+    addCoursesToLocalStorage(courses);
+    //clear
+    courseNameInput.value = "";
+    courseCodeInput.value = "";
+    courseDesInput.value = "";
+  } 
+}
+
+function addCoursesToLocalStorage(courses) {
+  localStorage.setItem("courses", JSON.stringify(courses));
+  renderCourse(courses);
+}
+
+function getCourseFromLocalStorage() {
+  const reference = localStorage.getItem("courses");
+  if (reference) {
+    renderCourse(JSON.parse(reference));
+  }
+}
+
+function renderCourse(courses) {
+  courseContainer.innerHTML = "";
+
+  courses.forEach(function(course) {
+
+
+  })
+
+
+}
+
+
 
 // select everything
 // select the todo-form
@@ -41,6 +130,7 @@ function addTodo(item) {
     todoInput.value = '';
   }
 }
+
 
 // function to render given todos to screen
 function renderTodos(todos) {

@@ -1,6 +1,6 @@
 5022
 112C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\source-map-support\browser-source-map-support.js132970831563578060 0
-55C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist132988981915749485 1
+55C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist132989248481920495 1
 80C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\img\SVG\1x\Asset 2.png132988149071411187 0
 83C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\ipaddr.js\README.md132970821100835235 0
 102C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\svgo\plugins\convertEllipseToCircle.js132970831567160332 0
@@ -52,7 +52,7 @@
 111C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\terser\node_modules\source-map\lib\read-wasm.js132970831566750411 0
 77C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\utility-types132970831566789456 1
 85C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\lmdb\dependencies\lz4132970831566896808 1
-68C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\index.html132988977446999938 0
+68C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\index.html132989226926099141 0
 92C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\css-tree\lib\walker\index.js132970831570293290 0
 81C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\yaml\dist\util.js132970831569434410 0
 104C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\lmdb\prebuilds\win32-x64\node.abi72.node132970831573533612 0
@@ -154,7 +154,7 @@
 73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\qs\.nycrc132970821102919197 0
 109C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\hash\parcel-hash.linux-arm64-gnu.node132970831567706888 0
 99C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\whatwg-url\lib\url-state-machine.js132970831565300868 0
-89C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\scss\components\navigation.scss132988982833996291 0
+89C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\scss\components\navigation.scss132989248846520549 0
 68C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\svgo132970831570537285 1
 77C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\color-convert132970831565813453 1
 71C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\public\js\delete.svg132988380509802570 0
@@ -3003,7 +3003,7 @@
 97C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\electron-to-chromium\package.json132970831566477136 0
 116C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\node-resolver-core\test\fixture\node_modules132970831570342089 1
 95C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\caniuse-lite\data\regions\LV.js132970831575524659 0
-77C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.e9c18eda.js.map132988981911894282 0
+77C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.e9c18eda.js.map132989248342410716 0
 96C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\electron-to-chromium\versions.js132970831565872012 0
 113C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\caniuse-lite\data\features\css-text-align-last.js132970831572860163 0
 81C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\dragula\.jshintrc132988823982691007 0
@@ -4355,7 +4355,7 @@
 98C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\watcher\src\unix\legacy.cc132970831566438092 0
 141C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\source-map\parcel_sourcemap_node\artifacts\index.linux-arm64-gnu.node132970831569756486 0
 108C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\watcher\src\macos\FSEventsBackend.hh132970831567521448 0
-74C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.c74267d1.css132988981910566920 0
+74C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.c74267d1.css132989248481442261 0
 106C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\transformer-babel\src\constants.js132970831566379533 0
 107C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\watcher\src\linux\InotifyBackend.cc132970831566311215 0
 120C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\@parcel\watcher\prebuilds\linux-x64\node.napi.glibc.node132970831569551527 0
@@ -5009,15 +5009,15 @@
 75C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\.bin\terser132970831578492072 0
 79C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\.bin\terser.cmd132970831578492072 0
 79C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\node_modules\.bin\terser.ps1132970831578521363 0
-75C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\assAdd.b15b600b.svg132988981912196842 0
-72C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\bkg.29fdeed7.png132988981915720203 0
+75C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\assAdd.b15b600b.svg132989248343894234 0
+72C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\bkg.29fdeed7.png132989248349865320 0
 72C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\bkg.6f186573.svg132988148559876237 0
 73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\bkg2.7fe2445e.svg132988142348812938 0
 73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\bkg2.9847af0e.svg132988146163117541 0
-78C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\courseAdd.523d4abc.svg132988981912196842 0
+78C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\courseAdd.523d4abc.svg132989248343894234 0
 73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.31ae5fc8.js132988376023240286 0
-78C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.c74267d1.css.map132988981910674290 0
-73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.e9c18eda.js132988981911894282 0
-66C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.html132988981915115088 0
+78C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.c74267d1.css.map132989248481452019 0
+73C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.e9c18eda.js132989248342400986 0
+66C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\index.html132989248348659742 0
 74C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\public.0ba7c674.js132987148310026220 0
 78C:\Users\Erica\Desktop\USYD\DECO2017\final\studbud\dist\public.0ba7c674.js.map132987148310086059 0

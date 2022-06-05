@@ -13,11 +13,20 @@
   <div class="darkBkg" id="addCourseForm">
     <form id="courseForm">
       <h1 class="formTitle">Add a course</h1>
-      <input type="text" class="courseNamaInput" placeholder="This is a course called...">
-      <input type="text" class="courseCodeInput" placeholder="Code">
-      <input type="text" class="courseDesInput" placeholder="This is a course about...">
-      <button class="deleteButton" id="courseDeleteButton"><div class="innerDelete">Delete</div></button>
-      <button type="submit" class="addButton" id="courseAddButton"><div class="innerAdd">Add</div></button>
+      <div class="inputContainer">
+        <h3 class="inputText">COURSE NAME</h3>
+        <input type="text" class="courseNamaInput" placeholder="This is a course called...">
+      </div>
+      <div class="inputContainer">
+        <h3 class="inputText">COURSE CODE</h3>
+        <input type="text" class="courseCodeInput" placeholder="Code">
+      </div>
+      <div class="inputContainer">
+        <h3 class="inputText">DESCRIPTION</h3>
+        <input type="text" class="courseDesInput" placeholder="This is a course about...">
+      </div>
+      <button class="deleteButton" id="courseDeleteButton"><div class="innerDelete"><h2>Delete</h2></div></button>
+      <button type="submit" class="addButton" id="courseAddButton"><div class="innerAdd"><h2>Add</h2></div></button>
     </form>
   </div>
   <!--navbar-->

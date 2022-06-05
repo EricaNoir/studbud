@@ -2,6 +2,72 @@ function createCourse() {
     const courseForm = document.getElementById("addCourseForm");
     courseForm.style.visibility = "visible";
 }
+const addCourseForm = document.getElementById("addCourseForm");
+const courseNameInput = document.querySelector(".courseNamaInput");
+const courseCodeInput = document.querySelector(".courseCodeInput");
+const courseDesInput = document.querySelector(".courseDesInput");
+const courseContainer = document.getElementById("courseContainer");
+//array storing the courses
+let courses = [];
+class Course {
+    constructor(name, code, description){
+        this.name = name;
+        this.code = code;
+        this.description = description;
+        this.assessments = [];
+        this.links = [];
+    }
+}
+class Assessment {
+    constructor(name, description, timeToComplete, course, priority, dueDate, completion){
+        this.name = name;
+        this.description = description;
+        this.timeToComplete = timeToComplete;
+        this.course = course;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.completion = completion;
+        this.taskTodo = [];
+        this.taskInprogress = [];
+        this.taskDone = [];
+    }
+}
+class task {
+    constructor(name){
+        this.nama = name;
+        this.completion = 0;
+    }
+}
+addCourseForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    addCourse(courseNameInput, courseCodeInput, courseDesInput);
+});
+function addCourse(courseNameInput1, courseCodeInput1, courseDesInput1) {
+    if (courseNameInput1 !== "" && courseCodeInput1 !== "" && courseDesInput1 !== "") {
+        //create object
+        const course = new Course(courseNameInput1, courseCodeInput1, courseDesInput1);
+        //push
+        courses.push(course);
+        //store
+        addCoursesToLocalStorage(courses);
+        //clear
+        courseNameInput1.value = "";
+        courseCodeInput1.value = "";
+        courseDesInput1.value = "";
+    }
+}
+function addCoursesToLocalStorage(courses1) {
+    localStorage.setItem("courses", JSON.stringify(courses1));
+    renderCourse(courses1);
+}
+function getCourseFromLocalStorage() {
+    const reference = localStorage.getItem("courses");
+    if (reference) renderCourse(JSON.parse(reference));
+}
+function renderCourse(courses2) {
+    courseContainer.innerHTML = "";
+    courses2.forEach(function(course) {});
+}
 // select everything
 // select the todo-form
 const todoForm = document.querySelector('.todo-form');
