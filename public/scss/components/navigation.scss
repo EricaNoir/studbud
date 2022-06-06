@@ -120,10 +120,14 @@
         }
     }
     #homeBar {
-        position: absolute;
         width: 454px;
         height: 100%;
-        background-color: rgba(255,255,255,1);
+        background-color: #fff;
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: flex-start;
     
         h1 {
             position: absolute;
@@ -160,19 +164,14 @@
                 letter-spacing: 0.3px;
             }
         }
+
     
-        .nav {
+        #courses {
             position: relative;
             width: 402px;
             overflow: visible;
-            height: 100px;
-            left: 26px;
-
-
-        }
-    
-        #courses {
-            top: 30px;
+            height: auto;
+            top: 25px;
     
             #cNav {
                 width: 401px;
@@ -194,11 +193,24 @@
                     overflow: visible;
                 }
             }
+            #courseContainer {
+                margin-left: 5px;
+                width: 390px;
+                flex-wrap: wrap;
+                display: flex;
+                justify-content: space-between;
+            }
+
         }
 
 
 
         #assessments {
+            width: 402px;
+            overflow: visible;
+            position: relative;
+            height: auto;
+            top: 55px;
             #aNav {
                 width: 401px;
                 height: 37px;

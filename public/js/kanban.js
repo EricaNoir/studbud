@@ -14,49 +14,60 @@ const courseContainer = document.getElementById("courseContainer")
 //array storing the courses
 let courses = [];
 
-class Course {
-  constructor(name, code, description) {
-    this.name = name;
-    this.code = code;
-    this.description = description;
+function Course(courseName, courseCode, courseDes) {
+  let assessments = [];
+  let links = [];
+  this.name = courseName;
+  this.code = courseCode;
+  this.description = courseDes;
 
-    this.assessments = [];
-    this.links = [];
-  }
+  this.assessments = assessments;
+  this.links = links;
+  this.id = Date.now();
+  
+}
+  
+function Assessment(name, description, timeToComplete, course, priority, dueDate, completion) {
+  let taskTodo = [];
+  let taskInprogress = [];
+  let taskDone = [];
+  this.name = name;
+  this.description = description;
+  this.timeToComplete = timeToComplete;
+  this.course = course;
+  this.priority = priority;
+  this.dueDate = dueDate;
+  this.completion = completion;
+
+  this.taskTodo = taskTodo;
+  this.taskInprogress = taskInprogress;
+  this.taskDone = taskDone;
+  this.id = Date.now();
 }
 
-class Assessment {
-  constructor(name, description, timeToComplete, course, priority, dueDate, completion) {
-    this.name = name;
-    this.description = description;
-    this.timeToComplete = timeToComplete;
-    this.course = course;
-    this.priority = priority;
-    this.dueDate = dueDate;
-    this.completion = completion;
 
-    this.taskTodo = [];
-    this.taskInprogress = [];
-    this.taskDone = [];
-  }
+function Task(name) {
+  this.name = name;
+  this.completion = 0;
+  //this.completion = "toDo";
+  this.id = Date.now();
+  
 }
 
-class task {
-  constructor(name) {
-    this.nama = name;
-    this.completion = 0;
-  }
-}
+getCourseFromLocalStorage();
 
 addCourseForm.addEventListener('submit', function(event) {
   event.preventDefault();
-  addCourse(courseNameInput, courseCodeInput, courseDesInput);
+  addCourse(courseNameInput.value, courseCodeInput.value, courseDesInput.value);
 })
+
+
 
 function addCourse(courseNameInput, courseCodeInput, courseDesInput) {
   if (courseNameInput !== "" && courseCodeInput !== "" && courseDesInput !== "") {
     //create object
     const course = new Course(courseNameInput, courseCodeInput, courseDesInput);
+    addCourseForm.style.visibility = "hidden";
     //push
     courses.push(course);
     //store
@@ -65,8 +76,51 @@ function addCourse(courseNameInput, courseCodeInput, courseDesInput) {
     courseNameInput.value = "";
     courseCodeInput.value = "";
     courseDesInput.value = "";
+    
   } 
 }
+
+
+
+function renderCourse(courses) {
+  courseContainer.innerHTML = ``;
+  for (var i = 0; i < courses.length; i++){
+    coursehtml(courses[i]);
+  }
+
+}
+
+function coursehtml(c) {
+  const course = document.createElement('div');
+  
+  course.setAttribute('class', 'course');
+  course.setAttribute('data-key', c.id);
+  course.setAttribute('onclick','createCourse()');
+  
+  if (c.assessments.length == 0) {
+    course.innerHTML = `
+      <div class="courseDeco">
+        <h2>${c.code}</h2>
+      </div>
+      <h3>Recent Task:</h3>
+      <h4></h4>
+      <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+    `;
+  }    
+  else {
+    course.innerHTML = `
+    <div class="courseDeco">
+      <h2>${c.code}</h2>
+    </div>
+    <h3>Recent Task:</h3>
+    <h4>${c.assessments[0].name}</h4>
+    <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+  `;
+  }
+
+  courseContainer.appendChild(course);
+}
+
 
 function addCoursesToLocalStorage(courses) {
   localStorage.setItem("courses", JSON.stringify(courses));
@@ -76,20 +130,11 @@ function addCoursesToLocalStorage(courses) {
 function getCourseFromLocalStorage() {
   const reference = localStorage.getItem("courses");
   if (reference) {
-    renderCourse(JSON.parse(reference));
+    courses = JSON.parse(reference);
+    renderCourse(courses);
   }
 }
 
-function renderCourse(courses) {
-  courseContainer.innerHTML = "";
-
-  courses.forEach(function(course) {
-
-
-  })
-
-
-}
 
 
 
@@ -116,11 +161,13 @@ function addTodo(item) {
   // if item is not empty
   if (item !== '') {
     // make a todo object, which has id, name, and completed properties
-    const todo = {
+    /*const todo = {
       id: Date.now(),
       name: item,
       completion: "toDo"
-    };
+    };*/
+
+    const todo = new Task(item);
 
     // then add it to todos array
     todos.push(todo);
@@ -161,6 +208,7 @@ function renderTodos(todos) {
 
     li.innerHTML = `
       ${item.name}
+      ${item.id}
       <button class="delete-button">✕</button>
     `;
     // finally add the <li> to the <ul>

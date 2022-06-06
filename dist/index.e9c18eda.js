@@ -9,43 +9,48 @@ const courseDesInput = document.querySelector(".courseDesInput");
 const courseContainer = document.getElementById("courseContainer");
 //array storing the courses
 let courses = [];
-class Course {
-    constructor(name, code, description){
-        this.name = name;
-        this.code = code;
-        this.description = description;
-        this.assessments = [];
-        this.links = [];
-    }
+function Course(courseName, courseCode, courseDes) {
+    let assessments = [];
+    let links = [];
+    this.name = courseName;
+    this.code = courseCode;
+    this.description = courseDes;
+    this.assessments = assessments;
+    this.links = links;
+    this.id = Date.now();
 }
-class Assessment {
-    constructor(name, description, timeToComplete, course, priority, dueDate, completion){
-        this.name = name;
-        this.description = description;
-        this.timeToComplete = timeToComplete;
-        this.course = course;
-        this.priority = priority;
-        this.dueDate = dueDate;
-        this.completion = completion;
-        this.taskTodo = [];
-        this.taskInprogress = [];
-        this.taskDone = [];
-    }
+function Assessment(name, description, timeToComplete, course, priority, dueDate, completion) {
+    let taskTodo = [];
+    let taskInprogress = [];
+    let taskDone = [];
+    this.name = name;
+    this.description = description;
+    this.timeToComplete = timeToComplete;
+    this.course = course;
+    this.priority = priority;
+    this.dueDate = dueDate;
+    this.completion = completion;
+    this.taskTodo = taskTodo;
+    this.taskInprogress = taskInprogress;
+    this.taskDone = taskDone;
+    this.id = Date.now();
 }
-class task {
-    constructor(name){
-        this.nama = name;
-        this.completion = 0;
-    }
+function Task(name) {
+    this.name = name;
+    this.completion = 0;
+    //this.completion = "toDo";
+    this.id = Date.now();
 }
+getCourseFromLocalStorage();
 addCourseForm.addEventListener('submit', function(event) {
     event.preventDefault();
-    addCourse(courseNameInput, courseCodeInput, courseDesInput);
+    addCourse(courseNameInput.value, courseCodeInput.value, courseDesInput.value);
 });
 function addCourse(courseNameInput1, courseCodeInput1, courseDesInput1) {
     if (courseNameInput1 !== "" && courseCodeInput1 !== "" && courseDesInput1 !== "") {
         //create object
         const course = new Course(courseNameInput1, courseCodeInput1, courseDesInput1);
+        addCourseForm.style.visibility = "hidden";
         //push
         courses.push(course);
         //store
@@ -56,17 +61,43 @@ function addCourse(courseNameInput1, courseCodeInput1, courseDesInput1) {
         courseDesInput1.value = "";
     }
 }
-function addCoursesToLocalStorage(courses1) {
-    localStorage.setItem("courses", JSON.stringify(courses1));
-    renderCourse(courses1);
+function renderCourse(courses1) {
+    courseContainer.innerHTML = ``;
+    for(var i = 0; i < courses1.length; i++)coursehtml(courses1[i]);
+}
+function coursehtml(c) {
+    const course = document.createElement('div');
+    course.setAttribute('class', 'course');
+    course.setAttribute('data-key', c.id);
+    course.setAttribute('onclick', 'createCourse()');
+    if (c.assessments.length == 0) course.innerHTML = `
+      <div class="courseDeco">
+        <h2>${c.code}</h2>
+      </div>
+      <h3>Recent Task:</h3>
+      <h4></h4>
+      <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+    `;
+    else course.innerHTML = `
+    <div class="courseDeco">
+      <h2>${c.code}</h2>
+    </div>
+    <h3>Recent Task:</h3>
+    <h4>${c.assessments[0].name}</h4>
+    <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+  `;
+    courseContainer.appendChild(course);
+}
+function addCoursesToLocalStorage(courses2) {
+    localStorage.setItem("courses", JSON.stringify(courses2));
+    renderCourse(courses2);
 }
 function getCourseFromLocalStorage() {
     const reference = localStorage.getItem("courses");
-    if (reference) renderCourse(JSON.parse(reference));
-}
-function renderCourse(courses2) {
-    courseContainer.innerHTML = "";
-    courses2.forEach(function(course) {});
+    if (reference) {
+        courses = JSON.parse(reference);
+        renderCourse(courses);
+    }
 }
 // select everything
 // select the todo-form
@@ -88,11 +119,11 @@ function addTodo(item) {
     // if item is not empty
     if (item !== '') {
         // make a todo object, which has id, name, and completed properties
-        const todo = {
-            id: Date.now(),
-            name: item,
-            completion: "toDo"
-        };
+        /*const todo = {
+      id: Date.now(),
+      name: item,
+      completion: "toDo"
+    };*/ const todo = new Task(item);
         // then add it to todos array
         todos.push(todo);
         addToLocalStorage(todos); // then store it in localStorage
@@ -123,6 +154,7 @@ function renderTodos(todos1) {
         if (item.completed === true) li.classList.add('checked');
         li.innerHTML = `
       ${item.name}
+      ${item.id}
       <button class="delete-button">✕</button>
     `;
         // finally add the <li> to the <ul>
