@@ -63,6 +63,7 @@ small, .text_small {
 button {
   opacity: .5;
   cursor: pointer;
+  color: #6b6b6b;
   background: none;
   border: none;
   transition-duration: .2s;
@@ -136,24 +137,24 @@ div.course {
   margin-top: 20px;
 }
 
-div.course div {
+div.course .courseDeco {
   opacity: .7;
   width: 168px;
   height: 40px;
   background-color: var(--color);
   border-radius: 11px 11px 0 0;
   margin: 2px;
-  padding-top: 8px;
   padding-left: 12px;
 }
 
-div.course div h2 {
+div.course .courseDeco h2 {
   color: #fff;
+  float: left;
   font-size: 20px;
   font-weight: bold;
 }
 
-div.course div:hover {
+div.course .courseDeco:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -446,6 +447,7 @@ input, button, textarea, select {
 }
 
 .app-container #courseView {
+  visibility: hidden;
   --color: #586bdb;
 }
 

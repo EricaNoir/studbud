@@ -11,6 +11,8 @@ const courseDesInput = document.querySelector(".courseDesInput")
 
 const courseContainer = document.getElementById("courseContainer")
 
+const coursePage = document.getElementById("courseView");
+
 //array storing the courses
 let courses = [];
 
@@ -34,6 +36,11 @@ function Course(courseName, courseCode, courseDes) {
   this.links = links;
   this.id = Date.now();
   this.color = getRandomColor();
+  
+  //show asses & links of course c
+  function showDetails() {
+
+  }
   
 }
   
@@ -82,8 +89,13 @@ courseContainer.addEventListener('click', function(event) {
   if (event.target.classList.contains('delete-button')) {
     deleteCourse(event.target.parentElement.getAttribute('data-key'));
   }
+  if (event.target.classList.contains('courseDeco')) {
+    openCouse(event.target.parentElement.getAttribute('data-key'));
+  }
 
 })
+
+
 
 
 function addCourse(courseNameInput, courseCodeInput, courseDesInput) {
@@ -108,6 +120,12 @@ function deleteCourse(id) {
 }
 
 
+//courseView visability -> visible, render course page with given ID.
+function openCouse(id) {
+  coursePage.style.cssText = "visibility: visible;";
+
+}
+
 
 function renderCourse(courses) {
   courseContainer.innerHTML = ``;
@@ -127,9 +145,9 @@ function coursehtml(c) {
   
   if (c.assessments.length == 0) {
     course.innerHTML = `
-      <div class="courseDeco" onclick="openCourse()">
+      <button class="courseDeco">
         <h2>${c.code}</h2>
-      </div>
+      </button>
       <h3 class="recent">Recent Task:</h3>
       <h4></h4>
       <button class="delete-button" id="cDelete">✖</button>
@@ -149,7 +167,6 @@ function coursehtml(c) {
   courseContainer.appendChild(course);
 }
 
-
 function addCoursesToLocalStorage(courses) {
   localStorage.setItem("courses", JSON.stringify(courses));
   renderCourse(courses);
@@ -162,6 +179,10 @@ function getCourseFromLocalStorage() {
     renderCourse(courses);
   }
 }
+
+
+
+
 
 
 

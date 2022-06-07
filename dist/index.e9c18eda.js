@@ -7,6 +7,7 @@ const courseNameInput = document.querySelector(".courseNamaInput");
 const courseCodeInput = document.querySelector(".courseCodeInput");
 const courseDesInput = document.querySelector(".courseDesInput");
 const courseContainer = document.getElementById("courseContainer");
+const coursePage = document.getElementById("courseView");
 //array storing the courses
 let courses = [];
 let colors = [
@@ -36,6 +37,8 @@ function Course(courseName, courseCode, courseDes) {
     this.links = links;
     this.id = Date.now();
     this.color = getRandomColor();
+    //show asses & links of course c
+    function showDetails() {}
 }
 function Assessment(name, description, timeToComplete, course, priority, dueDate, completion) {
     let taskTodo = [];
@@ -72,6 +75,7 @@ addCourseForm.addEventListener('reset', function(event) {
 });
 courseContainer.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete-button')) deleteCourse(event.target.parentElement.getAttribute('data-key'));
+    if (event.target.classList.contains('courseDeco')) openCouse(event.target.parentElement.getAttribute('data-key'));
 });
 function addCourse(courseNameInput1, courseCodeInput1, courseDesInput1) {
     if (courseNameInput1 !== "" && courseCodeInput1 !== "" && courseDesInput1 !== "") {
@@ -90,6 +94,10 @@ function deleteCourse(id) {
     });
     addCoursesToLocalStorage(courses);
 }
+//courseView visability -> visible, render course page with given ID.
+function openCouse(id) {
+    coursePage.style.cssText = "visibility: visible;";
+}
 function renderCourse(courses1) {
     courseContainer.innerHTML = ``;
     for(var i = 0; i < courses1.length; i++)coursehtml(courses1[i]);
@@ -101,9 +109,9 @@ function coursehtml(c) {
     course.setAttribute('data-key', c.id);
     course.style.cssText = "--color: " + color;
     if (c.assessments.length == 0) course.innerHTML = `
-      <div class="courseDeco" onclick="openCourse()">
+      <button class="courseDeco">
         <h2>${c.code}</h2>
-      </div>
+      </button>
       <h3 class="recent">Recent Task:</h3>
       <h4></h4>
       <button class="delete-button" id="cDelete">✖</button>
