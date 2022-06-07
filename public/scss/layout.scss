@@ -23,6 +23,7 @@ button:hover {
 
 
 div.ass {
+	--color: #CE7B7B;
 	width: 400px;
 	height: 110px;
 	border-radius: 15px;
@@ -31,12 +32,12 @@ div.ass {
 		position: absolute;
 		width: 30px;
 		height: 110px;
-		background-color: #CE7B7B;
+		background-color: var(--color);
 		border-radius: 15px 0px 0px 15px;
 	}
 	.assInfo {
 		h2, h3, h4, h5 {
-			color: #CE7B7B;
+			color: var(--color);
 		}
 		position: absolute;
 		left: 64px;
@@ -73,14 +74,15 @@ div.course {
 	height: 130px;
 	border: 4px solid;
 	border-radius: 15px;
-	border-color: #CE7B7B;
+	--color: #CE7B7B;
+	border-color: var(--color);
 	background-color: white;
 	div {
 		opacity: 0.7;
 		width: 168px;
 		height: 40px;
 		margin: 2px;
-		background-color: #CE7B7B;
+		background-color: var(--color);
 		border-radius: 11px 11px 0px 0px;
 		padding-left: 12px;
 		padding-top: 8px;
@@ -99,7 +101,7 @@ div.course {
 	h3 {
 		margin-top: 5px;
 		font-size: 15px;
-		color: #CE7B7B;
+		color: var(--color);
 		font-weight: semibold;
 		margin-left: 13px;
 	}

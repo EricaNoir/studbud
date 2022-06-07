@@ -30,19 +30,20 @@
     </form>
   </div>
   <!--navbar-->
-  <div id="homeBar">
+  
+  <div class="homebar" id="homeView">
     <!--logo part-->
-		<div id="logoContainer">
-      <div id="logo">
+		<div class="logoContainer" id="logoContainer">
+      <div class="logo" id="logo">
         <span></span><span style="font-size: 35px">St</span><span style="color: #5d95bf; font-size: 35px">U</span><span style="font-size: 35px">dB</span><span style="color: #229722; font-size: 35px">U</span><span style="font-size: 35px">d</span>
       </div>
 		</div>
     <!--course nav-->
-		<div class="nav" id="courses">
-      <div id="cNav">
-        <svg id="cNavLine" viewbox="0 0 5 37"></svg>
+		<div class="block" id="courses">
+      <div class="nav" id="cNav">
+        <svg class="navLine" id="cNavLine" viewbox="0 0 5 37"></svg>
         <h1>Courses</h1>
-        <button class="add" id="cAdd" onclick="createCourse()"><img class="add" id="courseAdd" src="/courseAdd.523d4abc.svg"></button>
+        <button class="add" id="cAdd" onclick="createCourse()">✕</button>
       </div> 
       <div id="courseContainer">
         <!--div class="course" data-key="12345678" onclick="createCourse()">
@@ -58,18 +59,58 @@
     </div>
 
     <!--assessment nav-->
-		<div class="nav" id="assessments">
-      <div id="aNav">
-        <svg id="aNavLine" viewbox="0 0 5 37"></svg>
+		<div class="block" id="assessments">
+      <div class="nav" id="aNav">
+        <svg class="navLine" id="aNavLine" viewbox="0 0 5 37"></svg>
         <h1>Assessments</h1>
-        <button class="add" id="aAdd">
-          <img class="add" id="assAdd" src="/assAdd.b15b600b.svg">
-        </button>
+        <button class="add" id="aAdd" onclick="createAssessmentInHomePage()">✕</button>
       </div> 
       <div id="assContainer">
       </div>
     </div>
 	</div>
+
+  <div class="homebar" id="courseView">
+    <div class="logoContainer">
+      <div class="logo" id="courseName">
+        DECO2017
+      </div>
+		</div>
+
+    <div class="block" id="links">
+      <div class="nav" id="lNav">
+        <svg class="navLine" id="lNavLine" viewbox="0 0 5 37"></svg>
+        <h1>Links</h1>
+        <button class="add" id="lAdd" onclick="createLink()">✕</button>
+      </div> 
+      <div id="linkContainer">
+        <div class="link">
+          <a href="https://cn.fflogs.com/character/id/15254413" target="_blank">FF Logs</a>
+          <button class="delete-button">✕</button>
+        </div>
+        <div class="link">
+          <a href="https://cn.fflogs.com/character/id/15254413" target="_blank">FF Logs</a>
+          <button class="delete-button">✕</button>
+        </div>
+      </div>
+    </div>
+
+		<div class="block" id="assessmentsInCourse">
+      <div class="nav" id="aNavInCourse">
+        <svg class="navLine" id="aNavLineInCourse" viewbox="0 0 5 37"></svg>
+        <h1>Assessments</h1>
+        <button class="add" id="aAddInCourse" onclick="createAssessmentInCoursePage()">
+          ✕
+        </button>
+      </div> 
+      <div id="assContainerInCourse">
+      </div>
+    </div>
+  </div>
+
+
+
+
   <!--kanban-->
   <div id="kanban">
     <!--title part-->

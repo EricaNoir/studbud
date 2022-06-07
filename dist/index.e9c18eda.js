@@ -9,6 +9,23 @@ const courseDesInput = document.querySelector(".courseDesInput");
 const courseContainer = document.getElementById("courseContainer");
 //array storing the courses
 let courses = [];
+let colors = [
+    "#6D9CA6",
+    "#5B8E7D",
+    "#8EAD7A",
+    "#C0CB77",
+    "#F4C26F",
+    "#7EA9CE",
+    "#AE7FB5",
+    "#BC4B51",
+    "#DB7F5D",
+    "#F4A259",
+    "#8C6D67"
+];
+function getRandomColor() {
+    let i = Math.floor(Math.random() * colors.length);
+    return colors[i];
+}
 function Course(courseName, courseCode, courseDes) {
     let assessments = [];
     let links = [];
@@ -18,6 +35,7 @@ function Course(courseName, courseCode, courseDes) {
     this.assessments = assessments;
     this.links = links;
     this.id = Date.now();
+    this.color = getRandomColor();
 }
 function Assessment(name, description, timeToComplete, course, priority, dueDate, completion) {
     let taskTodo = [];
@@ -78,14 +96,15 @@ function renderCourse(courses1) {
 }
 function coursehtml(c) {
     const course = document.createElement('div');
+    const color = c.color;
     course.setAttribute('class', 'course');
     course.setAttribute('data-key', c.id);
-    //course.setAttribute('onclick','createCourse()');
+    course.style.cssText = "--color: " + color;
     if (c.assessments.length == 0) course.innerHTML = `
-      <div class="courseDeco">
+      <div class="courseDeco" onclick="openCourse()">
         <h2>${c.code}</h2>
       </div>
-      <h3>Recent Task:</h3>
+      <h3 class="recent">Recent Task:</h3>
       <h4></h4>
       <button class="delete-button" id="cDelete">✖</button>
     `;
@@ -93,10 +112,11 @@ function coursehtml(c) {
     <div class="courseDeco">
       <h2>${c.code}</h2>
     </div>
-    <h3>Recent Task:</h3>
+    <h3 class="recent">Recent Task:</h3>
     <h4>${c.assessments[0].name}</h4>
     <button class="delete-button" id="cDelete">✖</button>
   `;
+    //document.querySelector(".courseDeco").style.color = color;
     courseContainer.appendChild(course);
 }
 function addCoursesToLocalStorage(courses2) {
@@ -138,8 +158,8 @@ function addTodo(item) {
         // then add it to todos array
         todos.push(todo);
         addToLocalStorage(todos); // then store it in localStorage
-    // finally clear the input box value
-    //todoInput.value = '';
+        // finally clear the input box value
+        todoInput.value = '';
     }
 }
 // function to render given todos to screen
