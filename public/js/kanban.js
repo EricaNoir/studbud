@@ -59,25 +59,42 @@ getCourseFromLocalStorage();
 addCourseForm.addEventListener('submit', function(event) {
   event.preventDefault();
   addCourse(courseNameInput.value, courseCodeInput.value, courseDesInput.value);
+  courseNameInput.value = "";
+  courseCodeInput.value = "";
+  courseDesInput.value = "";
 })
 
+addCourseForm.addEventListener('reset', function(event) {
+  addCourseForm.style.visibility = "hidden";
+})
+
+courseContainer.addEventListener('click', function(event) {
+  if (event.target.classList.contains('delete-button')) {
+    deleteCourse(event.target.parentElement.getAttribute('data-key'));
+  }
+
+})
 
 
 function addCourse(courseNameInput, courseCodeInput, courseDesInput) {
   if (courseNameInput !== "" && courseCodeInput !== "" && courseDesInput !== "") {
     //create object
     const course = new Course(courseNameInput, courseCodeInput, courseDesInput);
-    addCourseForm.style.visibility = "hidden";
+    
     //push
     courses.push(course);
     //store
     addCoursesToLocalStorage(courses);
-    //clear
-    courseNameInput.value = "";
-    courseCodeInput.value = "";
-    courseDesInput.value = "";
+    addCourseForm.style.visibility = "hidden";
     
   } 
+}
+
+function deleteCourse(id) {
+  courses = courses.filter(function(course) {
+    return course.id != id;
+  })
+  addCoursesToLocalStorage(courses);
 }
 
 
@@ -95,7 +112,7 @@ function coursehtml(c) {
   
   course.setAttribute('class', 'course');
   course.setAttribute('data-key', c.id);
-  course.setAttribute('onclick','createCourse()');
+  //course.setAttribute('onclick','createCourse()');
   
   if (c.assessments.length == 0) {
     course.innerHTML = `
@@ -104,7 +121,7 @@ function coursehtml(c) {
       </div>
       <h3>Recent Task:</h3>
       <h4></h4>
-      <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+      <button class="delete-button" id="cDelete">✖</button>
     `;
   }    
   else {
@@ -114,7 +131,7 @@ function coursehtml(c) {
     </div>
     <h3>Recent Task:</h3>
     <h4>${c.assessments[0].name}</h4>
-    <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+    <button class="delete-button" id="cDelete">✖</button>
   `;
   }
 
@@ -174,7 +191,7 @@ function addTodo(item) {
     addToLocalStorage(todos); // then store it in localStorage
 
     // finally clear the input box value
-    todoInput.value = '';
+    //todoInput.value = '';
   }
 }
 
@@ -208,7 +225,6 @@ function renderTodos(todos) {
 
     li.innerHTML = `
       ${item.name}
-      ${item.id}
       <button class="delete-button">✕</button>
     `;
     // finally add the <li> to the <ul>

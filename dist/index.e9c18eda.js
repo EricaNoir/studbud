@@ -45,21 +45,32 @@ getCourseFromLocalStorage();
 addCourseForm.addEventListener('submit', function(event) {
     event.preventDefault();
     addCourse(courseNameInput.value, courseCodeInput.value, courseDesInput.value);
+    courseNameInput.value = "";
+    courseCodeInput.value = "";
+    courseDesInput.value = "";
+});
+addCourseForm.addEventListener('reset', function(event) {
+    addCourseForm.style.visibility = "hidden";
+});
+courseContainer.addEventListener('click', function(event) {
+    if (event.target.classList.contains('delete-button')) deleteCourse(event.target.parentElement.getAttribute('data-key'));
 });
 function addCourse(courseNameInput1, courseCodeInput1, courseDesInput1) {
     if (courseNameInput1 !== "" && courseCodeInput1 !== "" && courseDesInput1 !== "") {
         //create object
         const course = new Course(courseNameInput1, courseCodeInput1, courseDesInput1);
-        addCourseForm.style.visibility = "hidden";
         //push
         courses.push(course);
         //store
         addCoursesToLocalStorage(courses);
-        //clear
-        courseNameInput1.value = "";
-        courseCodeInput1.value = "";
-        courseDesInput1.value = "";
+        addCourseForm.style.visibility = "hidden";
     }
+}
+function deleteCourse(id) {
+    courses = courses.filter(function(course) {
+        return course.id != id;
+    });
+    addCoursesToLocalStorage(courses);
 }
 function renderCourse(courses1) {
     courseContainer.innerHTML = ``;
@@ -69,14 +80,14 @@ function coursehtml(c) {
     const course = document.createElement('div');
     course.setAttribute('class', 'course');
     course.setAttribute('data-key', c.id);
-    course.setAttribute('onclick', 'createCourse()');
+    //course.setAttribute('onclick','createCourse()');
     if (c.assessments.length == 0) course.innerHTML = `
       <div class="courseDeco">
         <h2>${c.code}</h2>
       </div>
       <h3>Recent Task:</h3>
       <h4></h4>
-      <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+      <button class="delete-button" id="cDelete">✖</button>
     `;
     else course.innerHTML = `
     <div class="courseDeco">
@@ -84,7 +95,7 @@ function coursehtml(c) {
     </div>
     <h3>Recent Task:</h3>
     <h4>${c.assessments[0].name}</h4>
-    <button class="edit" id="cEdit" onclick="editCourse()">✖</button>
+    <button class="delete-button" id="cDelete">✖</button>
   `;
     courseContainer.appendChild(course);
 }
@@ -127,8 +138,8 @@ function addTodo(item) {
         // then add it to todos array
         todos.push(todo);
         addToLocalStorage(todos); // then store it in localStorage
-        // finally clear the input box value
-        todoInput.value = '';
+    // finally clear the input box value
+    //todoInput.value = '';
     }
 }
 // function to render given todos to screen
@@ -154,7 +165,6 @@ function renderTodos(todos1) {
         if (item.completed === true) li.classList.add('checked');
         li.innerHTML = `
       ${item.name}
-      ${item.id}
       <button class="delete-button">✕</button>
     `;
         // finally add the <li> to the <ul>
